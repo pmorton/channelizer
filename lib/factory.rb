@@ -13,6 +13,10 @@ module Channelizer
         raise InvalidChannelTypeError, ":#{type} is not a registered channel" unless @registered_channels[type.to_sym]
         @registered_channels[type.to_sym].new(options)
       end
+
+      def channels
+        @registered_channels ||= {}
+      end
     end
 
   end

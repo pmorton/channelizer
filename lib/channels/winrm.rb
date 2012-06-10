@@ -41,7 +41,7 @@ module Channelizer
       # @return [Fixnum] the exit code of the command
       # @raise [StandardException]
       def execute(command, options = { })
-        defaults = { :shell => :cmd }
+        defaults = { :shell => :cmd, :out_console => true }
         options = defaults.merge(options)
 
         run_proc = Proc.new do |stdout, stderr|
@@ -52,9 +52,17 @@ module Channelizer
         shell = options.delete(:shell)
         case shell
         when :cmd
-          status = session.cmd(command,&run_proc) 
+          if options[:out_console]
+            status = session.cmd(command,&run_proc) 
+          else
+            status = session.cmd(command)
+          end
         when :powershell
-          status = session.powershell(command, &run_proc)
+          if options[:out_console]
+            status = session.powershell(command, &run_proc)
+          else
+            status = session.powershell(command)
+          end  
         else
           raise StandardError, "Invalid shell #{options[:shell]}"
         end
