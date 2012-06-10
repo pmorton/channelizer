@@ -14,7 +14,7 @@ Gem::Specification.new do |gem|
   gem.name          = "channelizer"
   gem.require_paths = ["lib"]
   gem.version       = Channelizer::VERSION
-  gem.add_runtime_dependency 'winrm', '~>1.1.2'
+  gem.add_runtime_dependency "winrm", "~> 1.1.2"
   gem.add_runtime_dependency "net-ssh", "~> 2.5.2"
   gem.add_runtime_dependency "net-scp", "~> 1.0.4"
 
