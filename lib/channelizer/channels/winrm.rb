@@ -1,3 +1,4 @@
+require 'winrm'
 module Channelizer
   module Channels
     class WinRM < Channelizer::Channels::Base
