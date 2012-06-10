@@ -1,4 +1,5 @@
-require './lib/test.rb'
+require 'channel_helper.rb'
+
 describe "winrm option parsing" do 
   it 'should require a host' do
     expect {

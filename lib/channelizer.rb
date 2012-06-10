@@ -1,0 +1,7 @@
+require 'winrm'
+require 'channelizer/util/retryable'
+require 'channelizer/exceptions/exceptions'
+require 'channelizer/factory'
+require 'channelizer/channels/base'
+require 'channelizer/channels/winrm'
+require 'channelizer/channels/ssh'

@@ -1,4 +1,4 @@
-require './lib/test.rb'
+require 'channel_helper.rb'
 describe "winrm object form" do
   it 'should expose a session' do
     c = Channelizer::Factory.build_channel(:winrm, :host => 'localhost', :username => 'vagrant', :password => 'vagrant') 

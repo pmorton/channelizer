@@ -1,6 +1,4 @@
-$: << File.dirname(__FILE__)
-require 'channel_helper'
-require './lib/test.rb'
+require 'channel_helper.rb'
 
 Channelizer::Factory.channels.each do |channel,klass| 
   puts "CLASS #{channel}"
@@ -89,7 +87,7 @@ describe 'winrm specifc functionality' do
     end
 
     it 'should upload a file' do
-      @channel.upload('./test/spec/test_data/test_file.txt', 'C:\test_file.txt')
+      @channel.upload('./spec/test_data/test_file.txt', 'C:\test_file.txt')
       STDOUT.should_receive(:print).with("This is a test upload")
       (@channel.execute "type test_file.txt") == 0     
 
@@ -103,7 +101,7 @@ describe 'ssh specifc functionality' do
     end
 
     it 'should upload a file' do
-      @channel.upload('./test/spec/test_data/test_file.txt', '/tmp/test_file.txt')
+      @channel.upload('./spec/test_data/test_file.txt', '/tmp/test_file.txt')
       STDOUT.should_receive(:print).with("This is a test upload")
       (@channel.execute "cat /tmp/test_file.txt") == 0     
 

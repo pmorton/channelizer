@@ -1,5 +1,6 @@
-$: << File.dirname(__FILE__) + '/../../lib/'
-
+$: << File.dirname(__FILE__) + '../lib/'
+$: << File.dirname(__FILE__)
+require 'channelizer'
 module ChannelHelper
 
   def new_channel(type)
