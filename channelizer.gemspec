@@ -17,5 +17,6 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency "winrm", "~> 1.1.2"
   gem.add_runtime_dependency "net-ssh", "~> 2.5.2"
   gem.add_runtime_dependency "net-scp", "~> 1.0.4"
-
+  gem.add_runtime_dependency 'rspec'
+  gem.add_runtime_dependency 'rake'
 end
